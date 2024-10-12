@@ -35,8 +35,9 @@ function Projects() {
     <section id="projects" className={styles.container}>
       <h1 className="sectionTitle">Project</h1>
       <div className={styles.projectsContainer}>
-        {projectsData.map((project) => (
+        {projectsData.map((project, idx) => (
           <ProjectCard
+            key={idx}
             src={project.src}
             link={project.link}
             h3={project.h3}
