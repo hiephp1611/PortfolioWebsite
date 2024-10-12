@@ -52,8 +52,8 @@ function Hero() {
           </a>
         </span>
         <p className={styles.description}>
-          Machine Learning Enthusiast | MSc Student | Building Smarter
-          Algorithms
+          Machine Learning Enthusiast | Master’s Student at Chalmers University
+          of Technology
         </p>
         <a href={CV} download>
           <button className="hover">Resume</button>
