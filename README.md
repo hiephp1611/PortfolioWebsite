@@ -8,3 +8,5 @@ Tools using in this Project: Tools and Technologies Covered:
   Code Editor: Visual Studio Code.
   Deployment: Netlify.
 
+the site is deployed at: https://hung-le.netlify.app/
+
