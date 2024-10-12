@@ -41,13 +41,13 @@ function Hero() {
         </h1>
         <h2>Msc Student</h2>
         <span>
-          <a href="http://twitter.com/" target="_blank">
+          <a href="https://twitter.com/hiephp1611" target="_blank">
             <img src={twitterIcon} alt="Twitter icon" />
           </a>
-          <a href="http://github.com/" target="_blank">
+          <a href="https://github.com/hiephp1611" target="_blank">
             <img src={githubIcon} alt="Github icon" />
           </a>
-          <a href="http://linkedin.com/" target="_blank">
+          <a href="www.linkedin.com/in/hung-hiep-le-648b8715b" target="_blank">
             <img src={linkedinIcon} alt="Linkedin icon" />
           </a>
         </span>
