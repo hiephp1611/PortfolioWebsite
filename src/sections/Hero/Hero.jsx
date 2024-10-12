@@ -47,7 +47,10 @@ function Hero() {
           <a href="https://github.com/hiephp1611" target="_blank">
             <img src={githubIcon} alt="Github icon" />
           </a>
-          <a href="www.linkedin.com/in/hung-hiep-le-648b8715b" target="_blank">
+          <a
+            href="https://linkedin.com/in/hung-hiep-le-648b8715b"
+            target="_blank"
+          >
             <img src={linkedinIcon} alt="Linkedin icon" />
           </a>
         </span>
