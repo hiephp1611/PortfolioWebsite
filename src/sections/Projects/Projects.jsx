@@ -1,31 +1,31 @@
 import styles from "./ProjectsStyles.module.css";
-import viberr from "../../assets/viberr.png";
-import freshburger from "../../assets/fresh-burger.png";
-import hisspter from "../../assets/hipsster.png";
-import fitLift from "../../assets/fitlift.png";
+import ARG from "../../assets/ARG.png";
+import nanoGPT from "../../assets/nano.png";
+import textsearch from "../../assets/text-search.png";
+import portfolio from "../../assets/portfolio.png";
 import ProjectCard from "../../common/ProjectCard";
 function Projects() {
   const projectsData = [
     {
-      src: viberr,
+      src: ARG,
       link: "https://github.com/hiephp1611/DATX11-VT23-09-Candidate-Project-Alternate-Reality-Game",
       h3: "Alternate Reality Game",
       p: "Candidate Project",
     },
     {
-      src: freshburger,
+      src: nanoGPT,
       link: "https://github.com/hiephp1611/nanoGPT",
       h3: "nanoGPT",
       p: "Hobby Project",
     },
     {
-      src: hisspter,
+      src: textsearch,
       link: "https://github.com/hiephp1611/text-search-engine",
       h3: "Basic Text Search Engine",
       p: "Hobby Project",
     },
     {
-      src: fitLift,
+      src: portfolio,
       link: "https://github.com/hiephp1611/PortfolioWebsite",
       h3: "Portfolio Website",
       p: "Hobby Project",
