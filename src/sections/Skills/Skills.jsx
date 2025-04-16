@@ -36,6 +36,7 @@ function Skills() {
         <SkillList src={checkMarkIcon} skill="Latex" />
         <SkillList src={checkMarkIcon} skill="Git" />
         <SkillList src={checkMarkIcon} skill="Pascal" />
+        <SkillList src={checkMarkIcon} skill="CI/CD" />
       </div>
     </section>
   );
