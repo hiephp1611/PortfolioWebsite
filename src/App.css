@@ -25,6 +25,10 @@ body {
   margin: 0 auto 60px;
 }
 
+html.theme-transitioning {
+  overflow: hidden;
+}
+
 #root {
   display: flex;
   flex-direction: column;
@@ -72,6 +76,39 @@ p {
 
 .hover {
   cursor: pointer;
+}
+
+@property --theme-reveal-angle {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 0deg;
+}
+
+::view-transition-old(root) {
+  animation: none;
+}
+
+::view-transition-new(root) {
+  animation: theme-reveal 700ms linear both;
+  mix-blend-mode: normal;
+  mask-image: radial-gradient(
+    circle 19px at var(--theme-transition-x) var(--theme-transition-y),
+    #000 98%,
+    transparent
+  ),
+  conic-gradient(
+    from var(--theme-transition-start) at var(--theme-transition-x)
+      var(--theme-transition-y),
+    #000 0deg var(--theme-reveal-angle),
+    transparent var(--theme-reveal-angle) 360deg
+  );
+  mask-composite: add;
+}
+
+@keyframes theme-reveal {
+  to {
+    --theme-reveal-angle: 360deg;
+  }
 }
 
 @media (width >= 800px) {

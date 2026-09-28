@@ -1,3 +1,4 @@
+import { useState } from "react";
 import styles from "./HeroStyles.module.css";
 import heroImg from "../../assets/hero-img.png";
 import sun from "../../assets/sun.svg";
@@ -12,11 +13,31 @@ import CV from "../../assets/CV.pdf";
 import { useTheme } from "../../common/ThemeContext";
 function Hero() {
   const { theme, toggleTheme } = useTheme();
+  const [previewTheme, setPreviewTheme] = useState(null);
 
-  const themeIcon = theme === "light" ? sun : moon;
+  const nextTheme = theme === "light" ? "dark" : "light";
+  const isPreviewingTheme = previewTheme !== null;
+  const themeIcon = (previewTheme || theme) === "light" ? sun : moon;
   const twitterIcon = theme === "light" ? twiterLight : twitterDark;
   const githubIcon = theme === "light" ? githubLight : githubDark;
   const linkedinIcon = theme === "light" ? linkedinLight : linkedinDark;
+  const handleThemeToggle = (event) => {
+    const button = event.currentTarget;
+    document.documentElement.classList.add("theme-transitioning");
+    setPreviewTheme(nextTheme);
+    window.setTimeout(() => {
+      const transition = toggleTheme(button);
+      if (transition) {
+        transition.finished.finally(() => {
+          document.documentElement.classList.remove("theme-transitioning");
+          setPreviewTheme(null);
+        });
+      } else {
+        document.documentElement.classList.remove("theme-transitioning");
+        setPreviewTheme(null);
+      }
+    }, 250);
+  };
 
   return (
     <section id="hero" className={styles.container}>
@@ -26,12 +47,17 @@ function Hero() {
           src={heroImg}
           alt="Profile picture of Hung Le"
         />
-        <img
-          className={styles.colorMode}
-          src={themeIcon}
-          alt="Color mode icon"
-          onClick={toggleTheme}
-        />
+        <button
+          type="button"
+          className={`${styles.colorMode} ${
+            isPreviewingTheme ? styles.previewing : ""
+          } ${previewTheme ? styles[previewTheme] : ""}`}
+          onClick={handleThemeToggle}
+          aria-label={`Switch to ${theme === "light" ? "dark" : "light"} mode`}
+          disabled={isPreviewingTheme}
+        >
+          <img src={themeIcon} alt="" />
+        </button>
       </div>
       <div className={styles.info}>
         <h1>
